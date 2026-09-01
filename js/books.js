@@ -1,0 +1,422 @@
+const books = [
+  {
+    id: 1,
+    title: "Atomic Habits",
+    author: "James Clear",
+    genre: ["Self-Help", "Productivity"],
+    style: ["Educational", "Practical"],
+    tags: ["habits", "productivity", "self-improvement", "growth"],
+    rating: 4.6,
+    reviews: 112764,
+    cover: "images/atomic-habits.jpg",
+    description: "A practical guide to building good habits, breaking bad ones, and making small changes that create remarkable results over time.",
+    pages: 320,
+    prices: { Amazon: 482, Flipkart: 470, Bookswagon: 649 },
+    priceHistory: [599, 549, 525, 499, 475, 482],
+    reviewDistribution: { 5: 76, 4: 18, 3: 3, 2: 1, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/0dBKExCb",
+      Flipkart: "https://dl.flipkart.com/s/phIxpVuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/atomic-habits-james-clear/9781847941831"
+    }
+  },
+  {
+    id: 2,
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    genre: ["Finance", "Self-Help"],
+    style: ["Educational", "Thought-Provoking"],
+    tags: ["money", "investing", "wealth", "behavior"],
+    rating: 4.6,
+    reviews: 83396,
+    cover: "images/psychology-of-money.jpg",
+    description: "Timeless lessons about wealth, greed, happiness and how our behavior shapes the way we think about money.",
+    pages: 256,
+    prices: { Amazon: 289, Flipkart: 256, Bookswagon: 275 },
+    priceHistory: [499, 479, 459, 429, 399, 289],
+    reviewDistribution: { 5: 71, 4: 21, 3: 5, 2: 1, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/0ed4aCN7",
+      Flipkart: "https://dl.flipkart.com/s/p5EpAVuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/psychology-money-morgan-housel/9789390166268"
+    }
+  },
+  {
+    id: 3,
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    genre: ["Fantasy", "Adventure"],
+    style: ["Adventure", "Fast-Paced"],
+    tags: ["fantasy", "adventure", "magic", "journey"],
+    rating: 4.6,
+    reviews: 78236,
+    cover: "images/the-hobbit.jpg",
+    description: "Bilbo Baggins is swept into an extraordinary adventure involving dwarves, a dragon, a mysterious ring and a world beyond the Shire.",
+    pages: 310,
+    prices: { Amazon: 359, Flipkart: 284, Bookswagon: 371 },
+    priceHistory: [429, 399, 379, 359, 349, 359],
+    reviewDistribution: { 5: 73, 4: 19, 3: 5, 2: 1, 1: 2 },
+    links: {
+    Amazon: "https://amzn.in/d/09Oi1IFx",
+    Flipkart: "https://dl.flipkart.com/s/3eG_KYNNNN",
+    Bookswagon: "https://www.bookswagon.com/book/hobbit-j-r-tolkien/9780008118044"
+  }
+  },
+  {
+    id: 4,
+    title: "1984",
+    author: "George Orwell",
+    genre: ["Dystopian", "Classic", "Fiction"],
+    style: ["Thought-Provoking", "Fast-Paced"],
+    tags: ["dystopia", "politics", "surveillance", "society"],
+    rating: 4.5,
+    reviews: 140840,
+    cover: "images/1984.jpg",
+    description: "A landmark dystopian novel exploring surveillance, propaganda, truth and the struggle of the individual against an oppressive system.",
+    pages: 328,
+    prices: { Amazon: 129, Flipkart: 127, Bookswagon: 153 },
+    priceHistory: [349, 329, 319, 309, 289, 129],
+    reviewDistribution: { 5: 68, 4: 23, 3: 6, 2: 1, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/017XBVjg",
+      Flipkart: "https://dl.flipkart.com/s/3eILBqNNNN",
+      Bookswagon: "https://www.bookswagon.com/book/1984-new2019-george-orwell/9789389053739"
+    }
+  },
+  {
+    id: 5,
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    genre: ["Fiction", "Philosophical"],
+    style: ["Thought-Provoking", "Emotional"],
+    tags: ["dreams", "journey", "purpose", "philosophy"],
+    rating: 4.6,
+    reviews: 181598,
+    cover: "images/the-alchemist.jpg",
+    description: "A young shepherd follows a recurring dream and begins a journey that changes the way he understands his purpose and the world.",
+    pages: 208,
+    prices: { Amazon: 259, Flipkart: 288, Bookswagon: 251 },
+    priceHistory: [349, 329, 309, 299, 279, 259],
+    reviewDistribution: { 5: 71, 4: 20, 3: 6, 2: 1, 1: 1 },
+    links: {
+    Amazon: "https://amzn.in/d/01s2xHcI",
+    Flipkart: "https://dl.flipkart.com/s/p5G5ztuuuN",
+    Bookswagon: "https://www.bookswagon.com/book/alchemist-paulo-coelho/9788172234980"
+  }
+  },
+  {
+    id: 6,
+    title: "Dune",
+    author: "Frank Herbert",
+    genre: ["Sci-Fi", "Adventure"],
+    style: ["Adventure", "Thought-Provoking"],
+    tags: ["space", "politics", "desert", "empire", "science"],
+    rating: 4.5,
+    reviews: 100647,
+    cover: "images/dune.jpg",
+    description: "An epic science-fiction story of politics, power, ecology and destiny set on the desert planet Arrakis.",
+    pages: 688,
+    prices: { Amazon: 525, Flipkart: 494, Bookswagon: 629 },
+    priceHistory: [699, 649, 629, 599, 549, 525],
+    reviewDistribution: { 5: 67, 4: 22, 3: 7, 2: 1, 1: 3 },
+    links: {
+      Amazon: "https://amzn.in/d/0hpSTqbp",
+      Flipkart: "https://dl.flipkart.com/s/phkfXkuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/dune-frank-herbert/9780441172719"
+    }
+  },
+  {
+    id: 7,
+    title: "The Book Thief",
+    author: "Markus Zusak",
+    genre: ["Historical Fiction", "Drama"],
+    style: ["Emotional", "Thought-Provoking"],
+    tags: ["war", "family", "books", "history", "friendship"],
+    rating: 4.6,
+    reviews: 31860,
+    cover: "images/book-thief.jpg",
+    description: "In wartime Germany, a young girl discovers the power of words, friendship and stories while growing up amid extraordinary circumstances.",
+    pages: 584,
+    prices: { Amazon: 329, Flipkart: 290, Bookswagon: 329 },
+    priceHistory: [529, 499, 479, 459, 449, 329],
+    reviewDistribution: { 5: 73, 4: 19, 3: 5, 2: 1, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/0daiUsT0",
+      Flipkart: "https://dl.flipkart.com/s/p5l4ZIuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/book-thief-markus-zusak/9781909531611"
+    }
+  },
+  {
+    id: 8,
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    genre: ["Thriller", "Mystery"],
+    style: ["Fast-Paced", "Suspenseful"],
+    tags: ["mystery", "psychology", "murder", "suspense"],
+    rating: 4.6,
+    reviews: 268929,
+    cover: "images/silent-patient.jpg",
+    description: "A famous painter stops speaking after a shocking event, and a psychotherapist becomes determined to uncover what happened.",
+    pages: 336,
+    prices: { Amazon: 269, Flipkart: 351, Bookswagon: 275 },
+    priceHistory: [449, 429, 399, 379, 349, 269],
+    reviewDistribution: { 5: 72, 4: 20, 3: 5, 2: 1, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/0buuFcJz",
+      Flipkart: "https://dl.flipkart.com/s/p5KI7HuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/silent-patient-alex-michaelides/9781409181637"
+    }
+  },
+  {
+    id: 9,
+    title: "Gone Girl",
+    author: "Gillian Flynn",
+    genre: ["Thriller", "Mystery"],
+    style: ["Fast-Paced", "Suspenseful"],
+    tags: ["mystery", "crime", "psychology", "relationships"],
+    rating: 4.3,
+    reviews: 160348,
+    cover: "images/gone-girl.jpg",
+    description: "A disappearance turns a marriage into a psychological mystery where appearances, media narratives and hidden motives collide.",
+    pages: 432,
+    prices: { Amazon: 326, Flipkart: 352, Bookswagon: 339 },
+    priceHistory: [479, 449, 429, 399, 379, 326],
+    reviewDistribution: { 5: 56, 4: 27, 3: 11, 2: 3, 1: 3 },
+    links: {
+      Amazon: "https://amzn.in/d/0bYfurtb",
+      Flipkart: "https://dl.flipkart.com/s/3e2kCGNNNN",
+      Bookswagon: "https://www.bookswagon.com/book/gone-girl-gillian-flynn/9781780221359"
+    }
+  },
+  {
+    id: 10,
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    genre: ["Romance", "Classic"],
+    style: ["Emotional", "Thought-Provoking"],
+    tags: ["romance", "society", "family", "relationships"],
+    rating: 4.5,
+    reviews: 10986,
+    cover: "images/pride-and-prejudice.jpg",
+    description: "Elizabeth Bennet navigates family expectations, social conventions and her complicated first impressions of Mr. Darcy.",
+    pages: 432,
+    prices: { Amazon: 236, Flipkart: 295, Bookswagon: 252 },
+    priceHistory: [329, 309, 289, 269, 249, 236],
+    reviewDistribution: { 5: 72, 4: 17, 3: 5, 2: 2, 1: 4 },
+    links: {
+      Amazon: "https://amzn.in/d/0bveWEkF",
+      Flipkart: "https://dl.flipkart.com/s/p5sPtIuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/pride-prejudice-vivien-jones-tony/9780141439518"
+    }
+  },
+  {
+    id: 11,
+    title: "The Fault in Our Stars",
+    author: "John Green",
+    genre: ["Romance", "Drama"],
+    style: ["Emotional", "Fast-Paced"],
+    tags: ["love", "friendship", "emotion", "coming-of-age"],
+    rating: 4.5,
+    reviews: 157541,
+    cover: "images/fault-in-our-stars.jpg",
+    description: "Two teenagers meet at a support group and form a relationship that changes how they see love, life and each other.",
+    pages: 336,
+    prices: { Amazon: 329, Flipkart: 137, Bookswagon: 329 },
+    priceHistory: [359, 339, 319, 299, 289, 329],
+    reviewDistribution: { 5: 69, 4: 20, 3: 7, 2: 2, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/04I6IylF",
+      Flipkart: "https://dl.flipkart.com/s/3eaRoqNNNN",
+      Bookswagon: "https://www.bookswagon.com/book/fault-in-our-stars-john/9780141345659"
+    }
+  },
+  {
+    id: 12,
+    title: "Sapiens",
+    author: "Yuval Noah Harari",
+    genre: ["History", "Non-Fiction"],
+    style: ["Educational", "Thought-Provoking"],
+    tags: ["history", "humans", "science", "civilization"],
+    rating: 4.7,
+    reviews: 126214,
+    cover: "images/sapiens.jpg",
+    description: "A sweeping exploration of how Homo sapiens came to dominate the planet and shape societies, cultures and institutions.",
+    pages: 512,
+    prices: { Amazon: 486, Flipkart: 562, Bookswagon: 519 },
+    priceHistory: [599, 569, 549, 519, 475, 486],
+    reviewDistribution: { 5: 77, 4: 18, 3: 4, 2: 0, 1: 1 },
+    links: {
+      Amazon: "https://amzn.in/d/08Y5ScR9",
+      Flipkart: "https://dl.flipkart.com/s/pVzIatuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/sapiens-yuval-noah-harari/9780099590088"
+    }
+  },
+  {
+    id: 13,
+    title: "Ikigai",
+    author: "Héctor García & Francesc Miralles",
+    genre: ["Self-Help", "Philosophical"],
+    style: ["Educational", "Practical"],
+    tags: ["purpose", "happiness", "lifestyle", "wellness"],
+    rating: 4.6,
+    reviews: 63003,
+    cover: "images/ikigai.jpg",
+    description: "An accessible exploration of the Japanese concept of ikigai and ideas for finding purpose, balance and meaning in everyday life.",
+    pages: 208,
+    prices: { Amazon: 321, Flipkart: 304, Bookswagon: 389 },
+    priceHistory: [349, 329, 309, 299, 279, 321],
+    reviewDistribution: { 5: 72, 4: 20, 3: 6, 2: 1, 1: 1 },
+    links: {
+      Amazon: "https://amzn.in/d/01mT6D1R",
+      Flipkart: "https://dl.flipkart.com/s/3eX9rYNNNN",
+      Bookswagon: "https://www.bookswagon.com/book/ikigai-francesc-hector-garcia-h%C3%A9ctor/9781786330895"
+    }
+  },
+  {
+    id: 14,
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki",
+    genre: ["Finance", "Self-Help"],
+    style: ["Educational", "Practical"],
+    tags: ["money", "business", "wealth", "financial-literacy"],
+    rating: 4.5,
+    reviews: 38245,
+    cover: "images/rich-dad-poor-dad.jpg",
+    description: "A personal-finance classic contrasting two approaches to money, work and financial independence.",
+    pages: 336,
+    prices: { Amazon: 321, Flipkart: 337, Bookswagon: 377 },
+    priceHistory: [429, 399, 379, 359, 339, 321],
+    reviewDistribution: { 5: 71, 4: 19, 3: 6, 2: 1, 1: 3 },
+    links: {
+  Amazon: "https://amzn.in/d/00b92rKF",
+  Flipkart: "https://dl.flipkart.com/s/30RluZNNNN",
+  Bookswagon: "https://www.bookswagon.com/book/rich-poor-dad-t-robert/9781612681139"
+}
+  },
+  {
+    id: 15,
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    genre: ["Classic", "Fiction"],
+    style: ["Emotional", "Thought-Provoking"],
+    tags: ["wealth", "love", "society", "classic"],
+    rating: 4.6,
+    reviews: 1434,
+    cover: "images/great-gatsby.jpg",
+    description: "A portrait of ambition, wealth, love and the American dream through the mysterious millionaire Jay Gatsby.",
+    pages: 208,
+    prices: { Amazon: 319, Flipkart: 444, Bookswagon: 324 },
+    priceHistory: [279, 259, 239, 219, 199, 319],
+    reviewDistribution: { 5: 78, 4: 14, 3: 4, 2: 2, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/06uhMLnV",
+      Flipkart: "https://dl.flipkart.com/s/p5p0sFuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/great-gatsby-francis-scott-fscott/9780141182636"
+    }
+  },
+  {
+    id: 16,
+    title: "The Adventures of Sherlock Holmes",
+    author: "Arthur Conan Doyle",
+    genre: ["Mystery", "Classic"],
+    style: ["Fast-Paced", "Suspenseful"],
+    tags: ["detective", "crime", "mystery", "investigation"],
+    rating: 4.4,
+    reviews: 65,
+    cover: "images/sherlock-holmes.jpg",
+    description: "A collection of classic mysteries featuring Sherlock Holmes and Dr. Watson as they solve unusual and challenging cases.",
+    pages: 307,
+    prices: { Amazon: 348, Flipkart: 390, Bookswagon: 640 },
+    priceHistory: [299, 279, 259, 239, 229, 348],
+    reviewDistribution: { 5: 68, 4: 21, 3: 4, 2: 2, 1: 5 },
+    links: {
+      Amazon: "https://amzn.in/d/02ddqae3",
+      Flipkart: "https://dl.flipkart.com/s/pBiectuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/adventures-memoirs-sherlock-holmes-iain/9780140437713"
+    }
+  },
+  {
+    id: 17,
+    title: "The Kite Runner",
+    author: "Khaled Hosseini",
+    genre: ["Historical Fiction", "Drama"],
+    style: ["Emotional", "Thought-Provoking"],
+    tags: ["friendship", "family", "guilt", "war", "redemption"],
+    rating: 4.6,
+    reviews: 61625,
+    cover: "images/kite-runner.jpg",
+    description: "A powerful story of friendship, betrayal and redemption spanning decades of personal and political change.",
+    pages: 400,
+    prices: { Amazon: 370, Flipkart: 337, Bookswagon: 389 },
+    priceHistory: [479, 449, 429, 399, 379, 370],
+    reviewDistribution: { 5: 75, 4: 19, 3: 4, 2: 0, 1: 2 },
+    links: {
+      Amazon: "https://amzn.in/d/0bU6JtDH",
+      Flipkart: "https://dl.flipkart.com/s/pVwQWkuuuN",
+      Bookswagon: "https://www.bookswagon.com/book/kite-runner/9781408850251"
+    }
+  },
+  {
+    id: 18,
+    title: "A Good Girl's Guide to Murder",
+    author: "Holly Jackson",
+    genre: ["Mystery", "Thriller"],
+    style: ["Fast-Paced", "Suspenseful"],
+    tags: ["mystery", "teen", "investigation", "crime"],
+    rating: 4.7,
+    reviews: 235,
+    cover: "images/good-girls-guide.jpg",
+    description: "A student reopens a closed murder case for a school project and discovers that the official story may not be the truth.",
+    pages: 400,
+    prices: { Amazon: 348, Flipkart: 340, Bookswagon: 959 },
+    priceHistory: [449, 429, 399, 379, 359, 348],
+    reviewDistribution: { 5: 76, 4: 18, 3: 5, 2: 0, 1: 1 },
+    links: {
+      Amazon: "https://amzn.in/d/0j7AsufG",
+      Flipkart: "https://dl.flipkart.com/s/3wLMQ0NNNN",
+      Bookswagon: "https://www.bookswagon.com/book/good-girls-guide-murder-holly/9781405293181"
+    }
+  },
+  {
+    id: 19,
+    title: "Harry Potter and the Philosopher's Stone",
+    author: "J.K. Rowling",
+    genre: ["Fantasy", "Adventure"],
+    style: ["Adventure", "Fast-Paced"],
+    tags: ["magic", "wizard", "friendship", "school", "fantasy"],
+    rating: 4.7,
+    reviews: 143057,
+    cover: "images/harry-potter.jpg",
+    description: "An ordinary boy discovers that he is a wizard and enters a magical world filled with friendship, mystery and adventure.",
+    pages: 352,
+    prices: { Amazon: 305, Flipkart: 174, Bookswagon: 389 },
+    priceHistory: [499, 469, 449, 429, 399, 305],
+    reviewDistribution: { 5: 82, 4: 12, 3: 3, 2: 1, 1: 2 },
+    links: {
+      Amazon: "https://www.amazon.in/Harry-Potter-Philosophers-Stone-Rowling/dp/B0H87X4RV1/ref=tmm_pap_swatch_0",
+      Flipkart: "https://dl.flipkart.com/s/30p7aBNNNN",
+      Bookswagon: "https://www.bookswagon.com/book/harry-potter-philosophers-stone-jk/9781408855652"
+    }
+  },
+  {
+    id: 20,
+    title: "Percy Jackson & the Olympians",
+    author: "Rick Riordan",
+    genre: ["Fantasy", "Adventure"],
+    style: ["Adventure", "Fast-Paced"],
+    tags: ["mythology", "magic", "quest", "friendship"],
+    rating: 4.6,
+    reviews: 62802,
+    cover: "images/percy-jackson.jpg",
+    description: "A young boy discovers a connection to Greek mythology and embarks on a dangerous quest alongside his friends.",
+    pages: 384,
+    prices: { Amazon: 340, Flipkart: 352, Bookswagon: 354 },
+    priceHistory: [499, 479, 459, 429, 399, 340],
+    reviewDistribution: { 5: 77, 4: 17, 3: 4, 2: 1, 1: 1 },
+    links: {
+      Amazon: "https://amzn.in/d/00mmEyEn",
+      Flipkart: "https://dl.flipkart.com/s/3wTAAXNNNN",
+      Bookswagon: "https://www.bookswagon.com/book/percy-jackson-lightning-thief-book/9780141346809"
+    }
+  }
+];
